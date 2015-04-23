@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content=""> 
+    <title>Show Me The Money</title>
+
+    <!-- Bootstrap CDN CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+
+    <!-- Include jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN JS -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- Include JS -->
+    <script src="js/application.js"></script>
+
+    <!-- Font Awesome -->
+<!--     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-brand">
+          <h2>#ShöwMeTheMöney</h2>
+        </div>
+        <button type="submit" id="log-out"  class="btn btn-default">Logout</button>
+      </div>
+    </nav>
+   
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="expensePill"><a href="#expenses">Expenses</a></li>
+      <li role="presentation" class="incomePill"><a href="#income">Income</a></li>
+      <li role="presentation" class="graphPill"><a href="#graph">Graphs</a></li>
+    </ul>
+
+    <!-- Expenses -->
+    <section id="add-remove-expenses" class="container">
+      <div class="row col-xs-12">
+        <h1>
+        Expenses
+        </h1>
+        <hr>
+      </div>
+      <br>
+      <!-- Expenses Input -->
+      <div id="expenses" class="input-group">
+        <form class="form-inline">
+          <div class="expenses row">
+            <!-- Day -->
+            <div class="col-xs-12 col-sm-2">
+              <input type="text" class="form-control newDay" placeholder="Day">
+            </div>
+            <!-- Month -->
+            <div class="col-xs-12 col-sm-2">
+              <input type="month" class="form-control newMonth" placeholder="Month">
+            </div>
+            <!-- Category -->
+            <div class="col-xs-12 col-sm-2">
+              <select class="form-control newCategory">
+                <option>Home</option>
+                <option>Shopping</option>
+                <option>Phone</option>
+                <option>Charity</option>
+                <option>Commute</option>
+              </select>
+            </div>
+            <!-- Description -->
+            <div class="col-xs-12 col-sm-3">
+              <input type="text" class="form-control newDescription" placeholder="Description">
+            </div>
+            <!-- Amount -->
+            <div class="col-xs-12 col-sm-2">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control newAmount" aria-label="Amount">
+              </div>
+            </div>
+            <!-- Add Button -->
+            <div class="col-xs-12 col-sm-1">
+              <button class="btn btn-default addButton" type="button">Add Expense</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <br>
+    <br>
+    <br>
+
+    <!-- Listing Expenses -->
+    <section id="list-expenses" class="container">
+      <div class="database-box">
+        <h1>
+        Database
+        </h1>
+        <div class="table-responsive">
+        <table id="all-expenses" class="table table-condensed table-striped" >
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Month</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </section>
+      <!-- Delete Button -->
+      <div class="col-xs-12 col-sm-1">
+        <button class="btn btn-default deleteButton" type="button">Remove</button>
+      </div>
+
+  <!-- Bootstrap and jQuery
+  ================================================== -->
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+</body>
+</html>

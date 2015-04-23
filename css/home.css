@@ -1,0 +1,83 @@
+body {
+  margin: 0 auto;
+  width: 90%;
+  background: url(http://) no-repeat fixed bottom right;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+#log-out {
+  float: right;
+  vertical-align: -webkit-baseline-middle;
+}
+
+h2 {
+  margin: -5px;
+  color: black;
+  font-weight: 600;
+}
+
+.btn-default {
+  background-color: #f37a7d;
+  color: #000;
+  font-weight: 600;
+  border-color: #f37a7d;
+}
+
+.nav-brand:before {
+  vertical-align: -webkit-baseline-middle;
+}
+/*section {
+  background-color: rgba(255,255,255,0.75);
+  min-height: 100%;
+  position: relative;
+  margin: auto;
+  padding: 0;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}*/
+
+.col-xs-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0px;
+  padding-left: 8px;
+}
+
+/*PROFILE PAGE*/
+/*
+.navbar-page-item > li > a:hover {
+  color: blue;
+  border-bottom: 5px solid blue;
+}
+.header-wrapper { 
+  position:relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:  
+}
+
+img.img-responsive { 
+  display: table-cell; 
+  max-width: 100%; 
+}
+
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  colspan: 2;
+  color: blue;
+}
+
+tr {
+  padding: 5px;
+}*/
