@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	
 	var newData = [];
-	
 	var request = {
 		type: "GET", 
 		url: "http://localhost:3000/expenses",
@@ -35,16 +34,16 @@ $(document).ready(function(){
 
 	function initializeHighChart() {
 		var highChartConfig = {
-			chart: {
-				type: 'line'
+			title: {
+				text: "DAILY EXPENSES",
 			},
 			xAxis: {
 				type: 'datetime',
-				category: ["2015-01", "2015-02"]
+				category: ["2015-01", "2015-02", "2015-03", "2015-04", "2015-04", "2015-05", "2015-05", "2015-06"]
 			},
 			series: [{
-				name: 'new series',
-				data: [7.0, 8]
+				name: 'Expenses',
+				data: [10000, 525.09, 200.05, 234.67, 890, 456.9, 3500.00, 50.50, 7]
 			}]
 		};
 

@@ -226,6 +226,7 @@ listIncome();
    $('#expenses, #incomes').hide();
    $('.graphPill').css("background","transparent");
    $('#graphs').show();
+   $('.highcharts-background').attr("fill","transparent")
  })
 
 });
