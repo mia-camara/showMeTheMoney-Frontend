@@ -63,6 +63,7 @@ h2 {
 }
 
 .container-fluid {
+  margin: 0px -68px 0px -65px;
   background-color: black;
   border: 0.5px solid grey;
   opacity: 0.8;

@@ -1,6 +1,7 @@
 $ (document).ready(function(){
 
 listData();
+listIncome();
 
 	// SIGN UP - NEW USER
 	$('#sign-up').on('click', function(event){
@@ -118,7 +119,7 @@ listData();
   }
 
   // DELETE EXPENSE
-	$('.deleteButton').on('click', function(event){
+	$(document).on('click','.deleteButton', function(){
 		console.log('clicked')
 		event.preventDefault(); 
 		var element = $(this).attr('value');
@@ -191,9 +192,8 @@ listData();
   }
 
   // DELETE INCOME
-	$('.deleteIncomeButton').on('click', function(event){
-		console.log('clicked')
-		event.preventDefault(); 
+	$(document).on('click','.deleteIncomeButton', function(){
+		console.log('clicked'); 
 		var element = $(this).attr('value');
 
     $.ajax({
@@ -206,7 +206,6 @@ listData();
 	    }
 		})
 	});
-
 
 // NAV PILLS
  $('#expenses, #incomes, #graphs').hide();
@@ -228,4 +227,5 @@ listData();
    $('.graphPill').css("background","transparent");
    $('#graphs').show();
  })
+
 });
