@@ -5,8 +5,26 @@ body {
   height: 100%;
 }
 
+body { 
+  background: url(../images/219.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
+
 html {
   height: 100%;
+}
+
+.nav-tabs {
+/*  background-color: #f37a7d;
+  color: f9f7f1;*/
+  font-weight: 600;
+}
+
+.deleteButton {
+  align-items: right;
 }
 
 #log-out {
@@ -16,8 +34,16 @@ html {
 
 h2 {
   margin: -5px;
-  color: black;
+  color: #f37a7d;
   font-weight: 600;
+}
+
+.btn-coral {
+  background-color: #f37a7d;
+  color: #000;
+  font-weight: 600;
+  border-color: #f37a7d;
+  margin-top: 7px;
 }
 
 .btn-default {
@@ -25,20 +51,23 @@ h2 {
   color: #000;
   font-weight: 600;
   border-color: #f37a7d;
+  float: right;
+}
+
+.addButton {
+  margin-left: 100px;
 }
 
 .nav-brand:before {
   vertical-align: -webkit-baseline-middle;
 }
-/*section {
-  background-color: rgba(255,255,255,0.75);
-  min-height: 100%;
-  position: relative;
-  margin: auto;
-  padding: 0;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-}*/
+
+.container-fluid {
+  background-color: black;
+  border: 0.5px solid grey;
+  opacity: 0.8;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
 
 .col-xs-12 {
   position: relative;
@@ -47,37 +76,16 @@ h2 {
   padding-left: 8px;
 }
 
-/*PROFILE PAGE*/
-/*
-.navbar-page-item > li > a:hover {
-  color: blue;
-  border-bottom: 5px solid blue;
-}
-.header-wrapper { 
-  position:relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 50%; 
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size:  
-}
-
-img.img-responsive { 
-  display: table-cell; 
-  max-width: 100%; 
-}
-
-
 table {
   border-collapse: collapse;
 }
 
 th {
   colspan: 2;
-  color: blue;
+  color: black;
+  font-weight: 600;
 }
 
 tr {
   padding: 5px;
-}*/
+}

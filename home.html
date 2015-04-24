@@ -33,32 +33,36 @@
 
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-brand">
+        <div class="navbar-header navbar-brand">
           <h2>#ShöwMeTheMöney</h2>
         </div>
-        <button type="submit" id="log-out"  class="btn btn-default">Logout</button>
+        <button type="submit" id="log-out"  class="btn btn-coral">Logout</button>
       </div>
     </nav>
    
     <ul class="nav nav-tabs">
-      <li role="presentation" class="expensePill"><a href="#expenses">Expenses</a></li>
-      <li role="presentation" class="incomePill"><a href="#income">Income</a></li>
-      <li role="presentation" class="graphPill"><a href="#graph">Graphs</a></li>
+      <li role="presentation" class="expensePill"><a href="#expenses">EXPENSES</a></li>
+      <li role="presentation" class="incomePill"><a href="#income">INCOME</a></li>
+      <li role="presentation" class="graphPill"><a href="#graph">GRAPHS</a></li>
     </ul>
 
-    <!-- Expenses -->
-    <section id="add-remove-expenses" class="container">
+    <!-- EXPENSES -->
+    <div id="expenses" class="container">
       <div class="row col-xs-12">
-        <h1>
+        <center><h1>
         Expenses
-        </h1>
-        <hr>
+        </h1></center>
       </div>
       <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <!-- Expenses Input -->
-      <div id="expenses" class="input-group">
+      <div class="input-group">
         <form class="form-inline">
           <div class="expenses row">
             <!-- Day -->
@@ -74,9 +78,13 @@
               <select class="form-control newCategory">
                 <option>Home</option>
                 <option>Shopping</option>
+                <option>Dining Out</option>
                 <option>Phone</option>
-                <option>Charity</option>
+                <option>Personal Care</option>
                 <option>Commute</option>
+                <option>Social</option>
+                <option>Charity</option>
+                <option>Debt</option>
               </select>
             </div>
             <!-- Description -->
@@ -92,43 +100,94 @@
             </div>
             <!-- Add Button -->
             <div class="col-xs-12 col-sm-1">
-              <button class="btn btn-default addButton" type="button">Add Expense</button>
+              <button class="btn btn-default addButton" type="button">Add</button>
             </div>
           </div>
         </form>
       </div>
-    </section>
-    <br>
-    <br>
-    <br>
+      <br>
+      <br>
 
-    <!-- Listing Expenses -->
-    <section id="list-expenses" class="container">
-      <div class="database-box">
-        <h1>
-        Database
-        </h1>
-        <div class="table-responsive">
-        <table id="all-expenses" class="table table-condensed table-striped" >
+    <!-- Expenses Table -->
+      <div class="table-responsive">
+        <table id="all-expenses" class="table table-bordered" >
           <thead>
             <tr>
-              <th>Day</th>
-              <th>Month</th>
-              <th>Category</th>
-              <th>Description</th>
-              <th>Amount</th>
+              <th>#Day</th>
+              <th>#Month</th>
+              <th>#Category</th>
+              <th>#Description</th>
+              <th>#Amount</th>
             </tr>
           </thead>
           <tbody>
           </tbody>
         </table>
-        </div>
       </div>
-    </section>
-      <!-- Delete Button -->
-      <div class="col-xs-12 col-sm-1">
-        <button class="btn btn-default deleteButton" type="button">Remove</button>
+    </div>
+
+    <!-- INCOMES -->
+    <div id="incomes" class="container">
+      <div class="row col-xs-12">
+        <center><h1>
+        Income
+        </h1></center>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Incomes Input -->
+      <div class="input-group">
+        <form class="form-inline">
+          <div class="incomes row">
+            <!-- Day -->
+            <div class="col-xs-12 col-sm-2">
+              <input type="text" class="form-control incDay" placeholder="Day">
+            </div>
+            <!-- Month -->
+            <div class="col-xs-12 col-sm-3">
+              <input type="month" class="form-control incMonth" placeholder="Month">
+            </div>
+            <!-- Description -->
+            <div class="col-xs-12 col-sm-3">
+              <input type="text" class="form-control incDescription" placeholder="Description">
+            </div>
+            <!-- Amount -->
+            <div class="col-xs-12 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control incAmount" aria-label="Amount">
+              </div>
+            </div>
+            <!-- Add Button -->
+            <div class="col-xs-12 col-sm-1">
+              <button class="btn btn-default addIncomeButton" type="button">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <br>
+
+    <!-- Incomes Table -->
+      <div class="table-responsive">
+        <table id="all-incomes" class="table table-bordered" >
+          <thead>
+            <tr>
+              <th>#Day</th>
+              <th>#Month</th>
+              <th>#Description</th>
+              <th>#Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
   <!-- Bootstrap and jQuery
   ================================================== -->

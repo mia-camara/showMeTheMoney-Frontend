@@ -1,6 +1,6 @@
 $ (document).ready(function(){
 
-// listData();
+listData();
 
 	// SIGN UP - NEW USER
 	$('#sign-up').on('click', function(event){
@@ -65,6 +65,7 @@ $ (document).ready(function(){
   });
 
   function postRequest() {
+
     $.ajax({
       type: "POST",
       url: 'http://localhost:3000/expenses',
@@ -89,7 +90,10 @@ $ (document).ready(function(){
         $('.newDescription').val("");
         $('.newAmount').val("");
           listData();
-        }
+      },
+      fail: function(response){
+      	console.log("failed");
+      }
     }) 
   }
 
@@ -107,9 +111,121 @@ $ (document).ready(function(){
         console.log("success", response);
         $('#all-expenses > tbody').text(''); 
         response.forEach(function (post) {
-          $('#all-expenses > tbody').append("<tr class='post-item'>" + "<td>" + post.day + "</td>" + "<td>" + post.month + "</td>" + "<td>" + post.category + "</td>" + "<td>" + post.description + "</td>" + "<td>" + post.amount + "</td></tr>" );
+          $('#all-expenses > tbody').append("<tr>" + "<td>" + post.day + "</td>" + "<td>" + post.month + "</td>" + "<td>" + post.category + "</td>" + "<td>" + post.description + "</td>" + "<td class='post-button'>" + "$" + post.amount + "&nbsp&nbsp&nbsp&nbsp<button class='btn btn-default deleteButton' value='" + post._id + "' type='button'>X</button></td></tr>" );
         });
       }
     }); 
   }
+
+  // DELETE EXPENSE
+	$('.deleteButton').on('click', function(event){
+		console.log('clicked')
+		event.preventDefault(); 
+		var element = $(this).attr('value');
+
+    $.ajax({
+	    type: 'DELETE',
+	    url: 'http://localhost:3000/expenses/' + element,
+	    dataType: 'json',
+	    success: function(response){
+	    	console.log(response);
+	    	listData()
+	    }
+		})
+	});
+
+// POST A NEW INCOME
+	$(document).on('click','.addIncomeButton', function(){
+		postIncome();
+  });
+
+  function postIncome() {
+
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost:3000/incomes',
+      data: {
+        income: {
+          day:  $('.incDay').val(),
+          month: $('.incMonth').val(),
+          description: $('.incDescription').val(),
+          amount: $('.incAmount').val()
+        }      
+      },
+      dataType: "JSON",
+		  xhrFields: {
+		    withCredentials: true
+		  },
+      success: function(response) {
+        console.log("success", response);
+        $('.incDay').val("");
+        $('.incMonth').val("");
+        $('.incDescription').val("");
+        $('.incAmount').val("");
+          listIncome();
+      },
+      fail: function(response){
+      	console.log("failed");
+      }
+    }) 
+  }
+
+  //LIST INCOMES
+  
+  function listIncome() {
+    $.ajax({
+      type: "GET",
+      url: 'http://localhost:3000/incomes',
+      dataType: "JSON",
+		  xhrFields: {
+		    withCredentials: true
+		  },
+      success: function(response) {
+        console.log("success", response);
+        $('#all-incomes > tbody').text(''); 
+        response.forEach(function (post) {
+          $('#all-incomes > tbody').append("<tr>" + "<td>" + post.day + "</td>" + "<td>" + post.month + "</td>" + "<td>" + post.description + "</td>" + "<td class='post-button'>" + "$" + post.amount + "&nbsp&nbsp&nbsp&nbsp<button class='btn btn-default deleteIncomeButton' value='" + post._id + "' type='button'>X</button></td></tr>" );
+        });
+      }
+    }); 
+  }
+
+  // DELETE INCOME
+	$('.deleteIncomeButton').on('click', function(event){
+		console.log('clicked')
+		event.preventDefault(); 
+		var element = $(this).attr('value');
+
+    $.ajax({
+	    type: 'DELETE',
+	    url: 'http://localhost:3000/incomes/' + element,
+	    dataType: 'json',
+	    success: function(response){
+	    	console.log(response);
+	    	listIncome()
+	    }
+		})
+	});
+
+
+// NAV PILLS
+ $('#expenses, #incomes, #graphs').hide();
+
+ $(document).on('click','.expensePill', function() {
+   $('#incomes, #graphs').hide();
+   $('.expensePill').css("background","transparent");
+   $('#expenses').show();
+ })
+
+ $(document).on('click','.incomePill', function() {
+   $('#expenses, #graphs').hide();
+   $('.incomePill').css("background","transparent");
+   $('#incomes').show();
+ })
+
+ $(document).on('click','.graphPill', function() {
+   $('#expenses, #incomes').hide();
+   $('.graphPill').css("background","transparent");
+   $('#graphs').show();
+ })
 });
